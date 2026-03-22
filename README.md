@@ -1,25 +1,35 @@
 # vedaops.dev
 
-Single-page static splash site for **vedaops.dev**.
+Next.js proving surface for **vedaops.dev**.
+
+## Purpose
+- bounded owned-performance proving site
+- GA4 instrumentation sanity surface
+- pagePath / hostName / route-level observability testbed
+- Vercel deployment target for `vedaops.dev`
 
 ## Stack
-- Plain HTML + CSS
-- GitHub repo
-- Vercel Hobby deployment
-- Custom domain: `vedaops.dev`
+- Next.js App Router
+- React
+- TypeScript
+- Vercel
 
-## Files
-- `index.html`
-- `styles.css`
-- `vercel.json`
+## Routes
+- `/`
+- `/about`
+- `/contact`
 
-## Deploy on Vercel
-1. Create a GitHub repo (suggestion: `vedaops-dev-site`)
-2. Upload these files
-3. Import the repo into Vercel
-4. Attach `vedaops.dev`
-5. Point DNS to Vercel
+## Environment
+Create `.env.local` from `.env.example` and set:
 
-## DNS
-For an apex domain on Vercel, current Vercel docs show using:
-- `A` record for `@` -> `76.76.21.21`
+- `NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX`
+
+GA will only load when `NEXT_PUBLIC_GA_ID` is set.
+
+## Commands
+- `npm install`
+- `npm run dev`
+- `npm run build`
+
+## Notes
+This repo is intentionally small and controlled. It exists to help validate GA4 owned-performance assumptions before broader VEDA implementation.
